@@ -10,9 +10,10 @@
         $sql = "SELECT * FROM cadastro";
         $result = $conn->query($sql);   
 
-        //Solicitar todos os usuários cadastrados:
-        $sql = "SELECT * FROM usuario";
-        $result2 = $conn->query($sql);   
+         //Solicitar todos os usuários cadastrados:
+         $sql2 = "SELECT * FROM usuario";
+         $result2 = $conn->query($sql2);   
+
     
 
     

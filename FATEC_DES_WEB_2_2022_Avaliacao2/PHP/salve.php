@@ -28,16 +28,22 @@ require_once('./conexao.php');
     $sql = "INSERT INTO cadastro (id, nome, sobrenome, curso, telefone)
     VALUES (null, '$nome', '$sobrenome', '$curso', '$telefone' )";
 
-    $user = ($_POST['user']);
-    $senha = ($_POST['senha']);
-
-    $sql = "INSERT INTO usuario (id, user, senha)
-    VALUES (null, '$user', '$senha')";
-
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $user = ($_POST['user']);
+    $senha = ($_POST['senha']);
+
+    $sql2 = "INSERT INTO usuario (id, user, senha)
+    VALUES (null, '$user', '$senha')";
+
+    if ($conn->query($sql2) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql2 . "<br>" . $conn->error;
     }
    
     header("location: welcome.php");

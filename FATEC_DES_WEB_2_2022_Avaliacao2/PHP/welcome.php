@@ -59,13 +59,11 @@ require_once('./conexao.php')
                     <?php while($row = $result->fetch_assoc()): ?>
                         <tr>
                             <?php echo "
-                                
                                 <td>".$row["id"]."</td>
                                 <td>".$row["nome"]."</td>
                                 <td>".$row["sobrenome"]."</td>
                                 <td>".$row["curso"]."</td>
                                 <td>".$row["telefone"]."</td>";
-                                
                             ?>
                         </tr>
                     <?php endwhile; ?>
@@ -77,37 +75,34 @@ require_once('./conexao.php')
 
         <br> 
 
-        <p>
-    <h3>Usuários já cadastrados</h3>
+        <h3>Usuários cadastrados</h3>
 
-        <?php if($result2->num_rows > 0): ?> 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Login</th>
-                        <th scope="col">Senha</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while($row = $result2->fetch_assoc()): ?>
-                        <tr>
-                            <?php echo "
-                                
-                                <td>".$row["id"]."</td>
-                                <td>".$row["user"]."</td>
-                                <td>".$row["senha"]."</td>
-                                ";
-                                
-                            ?>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <p>Sem cadastro</p>
-        <?php endif; ?>
+<?php if($result2->num_rows > 0): ?> 
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Login</th>
+                <th scope="col">Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($row = $result2->fetch_assoc()): ?>
+                <tr>
+                    <?php echo "
+                        <td>".$row["id"]."</td>
+                        <td>".$row["user"]."</td>
+                        <td>".$row["senha"]."</td>";
+                    ?>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <p>Sem cadastro</p>
+<?php endif; ?>
+
+<br> 
         
         <a href="logout.php" class="btn btn-danger">SAIR</a>
     </p><br><br><br><br>
